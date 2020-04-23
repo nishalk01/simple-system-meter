@@ -1,6 +1,9 @@
 # simple-system-meter
 <h4>It is just a simple desktop application that monitors CPU usage,RAM usage and also measures DISK usage and Downlink speed<h4>
+
+![image](https://github.com/nishalk01/simple-system-meter/blob/master/image.png)
   
+
 
  
 # References:
