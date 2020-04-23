@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- 685x454-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+        window.jQuery = window.$ = require('jquery');
+    </script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./node_modules/raphael/raphael.min.js"></script>
+    <script src="./node_modules/justgage/dist/justgage.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css"> 
+  
+    <title>System-Monitor</title>
+</head>
+<body>
+    <!-- further development using icon-->
+    <div class="text-center" style="height:50px;">
+        <h1>System meter</h1>
+</div>
+  <div class="container">
+    <div class="row">
+    <div  class="col-xs-3 text-center" id="g1" style="width:320px;"></div>
+    <div  class="col-xs-3 text-center" id="g2" style="width:320px;"></div>
+    <div class="col-xs-3 text-center" id="g3" style="width:320px;" ></div>
+    <div class="col-xs-3 text-center" id="g4" style="width:320px;" ></div>
+ </div>
+ <div id="g"></div>
+</div>
+<script>
+
+    var g4 = new JustGage({
+id: 'g4',
+label: 'DOWNLINK',
+value:navigator.connection.downlink,
+min: 0,
+max:100,
+symbol: 'Mb/s',
+pointer: true,
+gaugeWidthScale: 0.5,
+counter: true,
+relativeGaugeSize:true
+});
+setInterval(()=>{
+    g4.refresh(navigator.connection.downlink),1000});
+</script>
+</body>
+<script src="meter.js"></script>
+</html>
